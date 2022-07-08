@@ -2744,6 +2744,10 @@ input[type="button"].btn-block {
     .btn-group-vertical > .btn.active {
       z-index: 1; }
 
+.wave{
+  font-size: 50px;
+}
+
 .btn-toolbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3444,6 +3448,7 @@ input[type="button"].btn-block {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    max-width: 65%;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-box-align: center;
@@ -4568,6 +4573,8 @@ input[type="button"].btn-block {
     color: #fff;
     background-color: #155724;
     border-color: #155724; }
+
+
 
 .list-group-item-info {
   color: #0c5460;
@@ -8149,7 +8156,8 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #ffbd39; }
+  color: white; 
+}
   a:hover, a:focus {
     text-decoration: none;
     color: #ffbd39;
@@ -8397,7 +8405,8 @@ h1, h2, h3, h4, h5,
   .home-slider {
     position: relative;
     height: 750px;
-    z-index: 0; }
+    z-index: 0; 
+  }
     .home-slider .slider-item {
       background-size: cover;
       background-repeat: no-repeat;
@@ -8408,14 +8417,7 @@ h1, h2, h3, h4, h5,
       @media (max-width: 1199.98px) {
         .home-slider .slider-item {
           background-position: center center !important; } }
-      .home-slider .slider-item .overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #000000;
-        opacity: 0; }
+
       .home-slider .slider-item .slider-text {
         height: 750px;
         z-index: 0; }
@@ -8423,29 +8425,23 @@ h1, h2, h3, h4, h5,
           .home-slider .slider-item .slider-text {
             text-align: center; } }
         .home-slider .slider-item .slider-text .one-third {
-          width: 60%;
+          width: 50%;
           position: relative;
           z-index: -1; }
-          .home-slider .slider-item .slider-text .one-third .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #000000;
-            opacity: 0; }
+        
           @media (max-width: 1199.98px) {
             .home-slider .slider-item .slider-text .one-third {
               width: 85%; } }
           @media (max-width: 991.98px) {
             .home-slider .slider-item .slider-text .one-third {
-              width: 100%;
+              width: 65%;
               z-index: 0; }
               .home-slider .slider-item .slider-text .one-third .overlay {
                 opacity: .3; }
               .home-slider .slider-item .slider-text .one-third:after {
                 opacity: 0; } }
         .home-slider .slider-item .slider-text .one-forth {
+          max-width: 65%;
           width: 50%;
           position: relative; }
           @media (min-width: 768px) {
@@ -8455,7 +8451,7 @@ h1, h2, h3, h4, h5,
               left: 0;
               bottom: 0;
               right: 0;
-              width: 1200px;
+              width: 100%;
               margin: 0 auto; } }
           @media (max-width: 991.98px) {
             .home-slider .slider-item .slider-text .one-forth {
@@ -8478,9 +8474,8 @@ h1, h2, h3, h4, h5,
                 -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
                 right: 0;
-                max-width: 50%;
-                padding-left: 45px;
-                padding-right: 3em; } }
+                max-width: 65%;
+                padding-left: 0; } }
         .home-slider .slider-item .slider-text .subheading {
           color: #000000;
           font-weight: 600;
@@ -8494,11 +8489,17 @@ h1, h2, h3, h4, h5,
         .home-slider .slider-item .slider-text h1 {
           font-size: 60px;
           color: #fff;
-          line-height: 1.2;
           font-weight: 800; }
           .home-slider .slider-item .slider-text h1 span {
+            background: #43cea2;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
             font-weight: 800;
-            color: #ffbd39; }
+         }
           @media (max-width: 991.98px) {
             .home-slider .slider-item .slider-text h1 {
               color: #fff;
@@ -9047,7 +9048,7 @@ textarea.form-control {
 .media .ftco-icon {
   width: 100px; }
   .media .ftco-icon span {
-    color: #ffbd39; }
+    color: #0062cc; }
 
 #map {
   width: 100%; }
