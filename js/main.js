@@ -13,7 +13,6 @@
     parallaxElements: true,
     horizontalScrolling: false,
     hideDistantElements: false,
-    scrollProperty: 'scroll'
   });
 
 
@@ -38,7 +37,7 @@
 	loader();
 
 	// Scrollax
-   $.Scrollax();
+//    $.Scrollax();
 
 
 
@@ -116,17 +115,17 @@
 					navbar = $('.ftco_navbar'),
 					sd = $('.js-scroll-wrap');
 
-			if (st > 150) {
+			if (st > 0) {
 				if ( !navbar.hasClass('scrolled') ) {
 					navbar.addClass('scrolled');	
 				}
 			} 
-			if (st < 150) {
+			if (st < 0) {
 				if ( navbar.hasClass('scrolled') ) {
 					navbar.removeClass('scrolled sleep');
 				}
 			} 
-			if ( st > 350 ) {
+			if ( st > 0 ) {
 				if ( !navbar.hasClass('awake') ) {
 					navbar.addClass('awake');	
 				}
@@ -135,7 +134,7 @@
 					sd.addClass('sleep');
 				}
 			}
-			if ( st < 350 ) {
+			if ( st < 0 ) {
 				if ( navbar.hasClass('awake') ) {
 					navbar.removeClass('awake');
 					navbar.addClass('sleep');
@@ -249,4 +248,5 @@
 
 
 })(jQuery);
+
 
