@@ -243,10 +243,7 @@
     fixedContentPos: false
   });
 
-
-
-
-
+  	
 })(jQuery);
 
 
