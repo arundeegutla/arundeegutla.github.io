@@ -8355,6 +8355,9 @@ h1, h2, h3, h4, h5,
     top: 0;
     margin-top: 0px;
     -webkit-backdrop-filter: blur(20px) !important;
+    -o-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+
     background: rgba(0, 0, 0, 0.4);
     /* -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
     /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
