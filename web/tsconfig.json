@@ -17,6 +17,7 @@
         "name": "next"
       }
     ],
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
