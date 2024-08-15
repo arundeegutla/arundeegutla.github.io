@@ -50,7 +50,9 @@ export default function ProjectCard({
       <div className="flex flex-row flex-wrap mt-3 gap-1">
         {tech.map((technology) => {
           return (
-            <div className="p-2 border-2 border-gray-400 rounded-md font-light text-sm">
+            <div
+              key={technology}
+              className="p-2 border-2 border-gray-400 rounded-md font-light text-sm">
               {technology}
             </div>
           );
