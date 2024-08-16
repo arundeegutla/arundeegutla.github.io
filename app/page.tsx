@@ -3,6 +3,7 @@
 import ExpCard from '@/components/ExpCard';
 import LinkCard from '@/components/LinkCard';
 import ProjectCard from '@/components/ProjectCard';
+import SkillsComp from '@/components/SkillsComp';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaMediumM } from 'react-icons/fa';
@@ -17,58 +18,61 @@ import 'react-vertical-timeline-component/style.min.css';
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between w-screen max-w-screen-lg px-6">
-      <div className="flex flex-col text-center justify-center m-auto text-4xl font-medium my-52">
-        <h1>
-          <a className="waving-hand">👋</a>{' '}
-          <a className="font-thin">I&apos;m</a>{' '}
-          <a className="whitespace-nowrap">Arun Deegutla</a>
-        </h1>
-        <div className="flex text-2xl font-light mt-2 m-auto">
-          <Typewriter
-            words={[
-              'Software Engineer',
-              'Web Developer',
-              'Tech Enthusiast',
-              'Student',
-            ]}
-            loop={0}
-            cursor
-            cursorStyle="|"
-            typeSpeed={100}
-            deleteSpeed={50}
-            delaySpeed={2000}
-          />
-        </div>
-        <div className="flex flex-row space-x-2 text-center min-h-[100px] p-2 w-fit m-auto">
-          <Link
-            href={'https://www.linkedin.com/in/arundeegutla/'}
-            target="_blank"
-            className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-            <FaLinkedinIn />
-          </Link>
-          <Link
-            href={'https://github.com/arundeegutla/'}
-            target="_blank"
-            className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-            <FaGithub />
-          </Link>
-          <Link
-            href={'https://medium.com/@arundeegutla'}
-            target="_blank"
-            className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-            <FaMediumM />
-          </Link>
-          {/* <Link
+    <main className="flex flex-col items-center justify-between w-screen">
+      <div className="relative flex flex-col w-full h-fit mb-9 pb-10">
+        <div className="flex flex-col text-center max-w-screen-lg justify-center m-auto text-4xl font-medium  p-6">
+          <h1>
+            <a className="waving-hand">👋</a>{' '}
+            <a className="font-thin">I&apos;m</a>{' '}
+            <a className="whitespace-nowrap">Arun Deegutla</a>
+          </h1>
+          <div className="flex text-2xl font-light mt-2 m-auto">
+            <Typewriter
+              words={[
+                'Software Engineer',
+                'Web Developer',
+                'Tech Enthusiast',
+                'Student',
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={100}
+              deleteSpeed={50}
+              delaySpeed={2000}
+            />
+          </div>
+          <div className="flex flex-row space-x-2 text-center min-h-[100px] p-2 w-fit m-auto">
+            <Link
+              href={'https://www.linkedin.com/in/arundeegutla/'}
+              target="_blank"
+              className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
+              <FaLinkedinIn />
+            </Link>
+            <Link
+              href={'https://github.com/arundeegutla/'}
+              target="_blank"
+              className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
+              <FaGithub />
+            </Link>
+            <Link
+              href={'https://medium.com/@arundeegutla'}
+              target="_blank"
+              className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
+              <FaMediumM />
+            </Link>
+            {/* <Link
             href={''}
             target="_blank"
             className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
             <IoMdDocument />
           </Link> */}
+          </div>
         </div>
+        <SkillsComp />
       </div>
 
-      <div className="flex flex-col w-full h-fit my-10">
+      <div className="flex flex-col w-full max-w-screen-lg h-fit my-10 p-6">
         <div className="p-3 bg-gray-200 px-4 w-fit rounded-md text-xl">
           About me
         </div>
@@ -86,7 +90,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-col w-full h-fit my-10">
+      <div className="flex flex-col w-full max-w-screen-lg h-fit my-10 p-6">
         <div className="lg:m-auto p-3 bg-gray-200 px-4 w-fit rounded-md text-xl">
           Experience
         </div>
@@ -184,7 +188,7 @@ export default function Home() {
         </VerticalTimeline>
       </div> */}
 
-      <div className="flex flex-col w-full h-fit my-10">
+      <div className="flex flex-col w-full max-w-screen-lg h-fit my-10 p-6">
         <div className="p-3 bg-gray-200 px-4 w-fit rounded-md text-xl">
           Projects
         </div>

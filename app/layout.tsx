@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className}`}>
         <Nav />
-        <main className="flex w-full flex-col items-center justify-center pt-32">
+        <main className="relative flex w-full flex-col items-center justify-center pt-32">
           {children}
         </main>
         <Footer />
