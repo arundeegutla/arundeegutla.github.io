@@ -74,8 +74,8 @@ export default function Home() {
         </div>
         {/* <hr className="w-full  bg-gray-600"></hr> */}
         <p className="p-5">
-          I&apos;m Arun, a passionate software engineer pursuing a Bachelor’s in
-          Computer Science with a Minor in Mathematics at the{' '}
+          I&apos;m Arun, a software engineer pursuing a Bachelor’s in Computer
+          Science with a Minor in Mathematics at the{' '}
           <strong>University of Central Florida</strong> graduating in 2025.
           With a strong foundation in full-stack development, DevOps, and AI,
           I&apos;ve interned at AMD and Kore AI, where I contributed to
