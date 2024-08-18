@@ -33,7 +33,7 @@ export default function ScrollComp() {
   const repeatedSkills = Array(5).fill(fun_things).flat();
   return (
     <div className="relative left-0 bottom-0 w-screen overflow-hidden">
-      <div className="flex h-fit animate-scroll whitespace-nowrap">
+      <div className="flex h-fit animate-scroll w-fit">
         {repeatedSkills.map((Icon, index) => (
           <div
             key={index}
