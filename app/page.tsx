@@ -97,6 +97,40 @@ export default function Home() {
         {/* <hr className="w-full bg-gray-600"></hr> */}
         <VerticalTimeline animate={false} lineColor="rgba(75, 85, 99, 0.5)">
           <ExpCard
+            title="Undergraduate Teaching Assistant"
+            dates="Sep 2024 - Present"
+            location="UCF - Orlando, FL"
+            desc="Teaching Assistant for Discrete Structures 2"
+            image={
+              <Image
+                src={'/images/ucf_logo.png'}
+                alt="amd logo"
+                width={0}
+                height={0}
+                className="w-14 h-auto"
+                unoptimized
+              />
+            }
+          />
+
+          <ExpCard
+            title="ICPC Competitive Programmer"
+            dates="Sep 2022 - Present"
+            location="UCF Programming Team - Orlando, FL"
+            desc="Solved 1500+ coding problems, focusing on C++ and Java implementations of advanced data structures and algorithms"
+            image={
+              <Image
+                src={'/images/ucf_logo.png'}
+                alt="amd logo"
+                width={0}
+                height={0}
+                className="w-14 h-auto"
+                unoptimized
+              />
+            }
+          />
+
+          <ExpCard
             title="Software Engineer Intern"
             dates="May 2024 - Aug 2024"
             location="AMD - San Jose, CA"
@@ -136,23 +170,6 @@ export default function Home() {
             image={
               <Image
                 src={'/images/kore_logo.png'}
-                alt="amd logo"
-                width={0}
-                height={0}
-                className="w-14 h-auto"
-                unoptimized
-              />
-            }
-          />
-
-          <ExpCard
-            title="ICPC Competitive Programmer"
-            dates="Sep 2022 - May 2023"
-            location="UCF - Orlando, FL"
-            desc="Solved 1500+ coding problems, focusing on C++ and Java implementations of advanced data structures and algorithms"
-            image={
-              <Image
-                src={'/images/ucf_logo.png'}
                 alt="amd logo"
                 width={0}
                 height={0}
