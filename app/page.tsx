@@ -230,7 +230,7 @@ export default function Home() {
             desc="Won Best First-Time Hacker award among 700+ projects at KnightHacks by developing AlgoRun, a platform combining algorithmic challenges with typing speed tests in Python, C++, and Java"
             image=""
             github="https://github.com/arundeegutla/Alg0Run.git"
-            // link="https://www.linkedin.com/in/arundeegutla/"
+            link="https://alg0run.netlify.app/"
             tech={['React', 'Tailwind UI', 'Firebase', 'TypeScript']}
           />
           <ProjectCard
