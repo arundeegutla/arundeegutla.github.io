@@ -98,7 +98,7 @@ export default function Home() {
         <VerticalTimeline animate={false} lineColor="rgba(75, 85, 99, 0.5)">
           <ExpCard
             title="Undergraduate Teaching Assistant"
-            dates="Sep 2024 - Present"
+            dates="Sep 2024 - Dec 2024"
             location="UCF - Orlando, FL"
             desc="Teaching Assistant for Discrete Structures 2"
             image={
