@@ -1,47 +1,63 @@
-'use client';
-import React from 'react';
-import { BiLogoPostgresql } from 'react-icons/bi';
-import {
-  FaAws,
-  FaDocker,
-  FaGolang,
-  FaJava,
-  FaJenkins,
-  FaPython,
-  FaReact,
-} from 'react-icons/fa6';
-import { TbBrandCpp } from 'react-icons/tb';
-import { SiFlask, SiMysql, SiOpengl, SiTypescript } from 'react-icons/si';
+"use client"
 
-const fun_things = [
-  FaReact,
-  TbBrandCpp,
-  FaJava,
-  FaPython,
-  FaGolang,
-  SiTypescript,
-  FaAws,
-  SiOpengl,
-  SiMysql,
-  BiLogoPostgresql,
-  SiFlask,
-  FaDocker,
-  FaJenkins,
-];
+import { motion } from "framer-motion"
 
-export default function ScrollComp() {
-  const repeatedSkills = Array(5).fill(fun_things).flat();
+const skillCategories = [
+  {
+    title: "Languages",
+    skills: ["JavaScript", "TypeScript", "Python", "Java", "C++", "HTML", "CSS"],
+    icon: "💻",
+  },
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "Vue.js", "Tailwind CSS", "Material-UI", "Framer Motion"],
+    icon: "🎨",
+  },
+  {
+    title: "Backend",
+    skills: ["Node.js", "Express", "FastAPI", "PostgreSQL", "MongoDB", "Firebase"],
+    icon: "⚡",
+  },
+  {
+    title: "Tools & DevOps",
+    skills: ["Git", "Docker", "AWS", "Vercel", "Linux", "CI/CD"],
+    icon: "🛠️",
+  },
+]
+
+export default function SkillsComp() {
   return (
-    <div className="relative left-0 bottom-0 w-screen overflow-hidden">
-      <div className="flex h-fit animate-scroll w-fit">
-        {repeatedSkills.map((Icon, index) => (
-          <div
-            key={index}
-            className="mr-3 h-fit flex-shrink-0 rounded-md bg-gray-100 bg-opacity-65 p-2 px-20 backdrop-blur-xl">
-            <Icon className="text-2xl text-gray-600" repeatCount={-1} />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {skillCategories.map((category, categoryIndex) => (
+        <motion.div
+          key={category.title}
+          className="bg-white/70 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-3xl">{category.icon}</span>
+            <h3 className="text-2xl font-light text-slate-900">{category.title}</h3>
           </div>
-        ))}
-      </div>
+          <div className="flex flex-wrap gap-3">
+            {category.skills.map((skill, skillIndex) => (
+              <motion.span
+                key={skill}
+                className="px-4 py-2 bg-slate-100/80 backdrop-blur-sm text-slate-700 rounded-full text-sm border border-slate-200/50 hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -2 }}
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+      ))}
     </div>
-  );
+  )
 }

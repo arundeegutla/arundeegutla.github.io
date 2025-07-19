@@ -27,7 +27,7 @@ export default function NavBar() {
         <ProgressBar height="6" bgcolor="#1C1C1C" duration="0.2" />
       </div>
       <div
-        className={`fixed top-0 flex w-full justify-center border-b border-gray-200 bg-white/40 backdrop-blur-xl z-30 transition-all`}>
+        className={`fixed top-0 flex w-full justify-center bg-white/40 backdrop-blur-xl z-30 transition-all`}>
         <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
           <Link
             href="/"

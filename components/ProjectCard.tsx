@@ -1,63 +1,74 @@
-import { VerticalTimelineElement } from 'react-vertical-timeline-component';
-import Image from 'next/image';
-import { FaGithub } from 'react-icons/fa6';
-import { GoArrowUpRight } from 'react-icons/go';
-import { PiLinkSimpleBold } from 'react-icons/pi';
-import Link from 'next/link';
+"use client"
 
-export default function ProjectCard({
-  title,
-  github,
-  link,
-  desc,
-  image,
-  tech,
-}: {
-  title: string;
-  github?: string;
-  link?: string;
-  desc: string;
-  image: React.ReactNode;
-  tech: string[];
-}) {
+import Link from "next/link"
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
+import { motion } from "framer-motion"
+
+interface ProjectCardProps {
+  title: string
+  desc: string
+  image: string
+  github: string
+  link?: string
+  tech: string[]
+}
+
+export default function ProjectCard({ title, desc, github, link, tech }: ProjectCardProps) {
   return (
-    <div className="bg-gray-100 p-4 rounded-md m-3 max-lg:w-full lg:w-96">
-      <h3 className="text-2xl font-normal">{title}</h3>
-      <h4 className="flex flex-row min-h-[50px] mt-1 text-center">
-        {github ? (
-          <Link
-            href={github}
-            target="_blank"
-            className="h-fit mr-1 rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-            <FaGithub />
-          </Link>
-        ) : (
-          ''
-        )}
-        {link ? (
-          <Link
-            href={link}
-            target="_blank"
-            className="h-fit mr-1 rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-            <PiLinkSimpleBold />
-          </Link>
-        ) : (
-          ''
-        )}
-      </h4>
-      <h3 className="mt-2 font-light">{desc}</h3>
-
-      <div className="flex flex-row flex-wrap mt-3 gap-1">
-        {tech.map((technology) => {
-          return (
-            <div
-              key={technology}
-              className="p-2 border-2 border-gray-400 rounded-md font-light text-sm">
-              {technology}
-            </div>
-          );
-        })}
+    <motion.div
+      className="bg-white/70 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -4 }}
+    >
+      {/* Header */}
+      <div className="flex items-start justify-between mb-6">
+        <h3 className="text-2xl font-light text-slate-900">{title}</h3>
+        <div className="flex gap-3">
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href={github}
+              target="_blank"
+              className="w-10 h-10 bg-slate-100/80 backdrop-blur-sm border border-slate-200/50 rounded-xl flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-200/80 transition-all duration-200"
+            >
+              <FaGithub className="text-lg" />
+            </Link>
+          </motion.div>
+          {link && (
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href={link}
+                target="_blank"
+                className="w-10 h-10 bg-slate-100/80 backdrop-blur-sm border border-slate-200/50 rounded-xl flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-200/80 transition-all duration-200"
+              >
+                <FaExternalLinkAlt className="text-sm" />
+              </Link>
+            </motion.div>
+          )}
+        </div>
       </div>
-    </div>
-  );
+
+      {/* Description */}
+      <p className="text-slate-700 leading-relaxed mb-8 font-light">{desc}</p>
+
+      {/* Tech Stack */}
+      <div className="flex flex-wrap gap-2">
+        {tech.map((technology, index) => (
+          <motion.span
+            key={technology}
+            className="px-3 py-1 bg-slate-100/80 backdrop-blur-sm text-slate-600 rounded-full text-sm border border-slate-200/50 hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05, y: -1 }}
+          >
+            {technology}
+          </motion.span>
+        ))}
+      </div>
+    </motion.div>
+  )
 }
