@@ -31,7 +31,7 @@ export default function SkillsComp() {
       {skillCategories.map((category, categoryIndex) => (
         <motion.div
           key={category.title}
-          className="bg-white/70 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500"
+          className="bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-lg hover:shadow-xl hover:bg-slate-800/80 hover:border-slate-600/50 transition-all duration-500"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
@@ -39,13 +39,13 @@ export default function SkillsComp() {
         >
           <div className="flex items-center gap-4 mb-6">
             <span className="text-3xl">{category.icon}</span>
-            <h3 className="text-2xl font-light text-slate-900">{category.title}</h3>
+            <h3 className="text-2xl font-light text-white">{category.title}</h3>
           </div>
           <div className="flex flex-wrap gap-3">
             {category.skills.map((skill, skillIndex) => (
               <motion.span
                 key={skill}
-                className="px-4 py-2 bg-slate-100/80 backdrop-blur-sm text-slate-700 rounded-full text-sm border border-slate-200/50 hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200"
+                className="px-4 py-2 bg-slate-700/80 backdrop-blur-sm text-slate-300 rounded-full text-sm border border-slate-600/50 hover:bg-slate-600/80 hover:border-slate-500/50 hover:text-white transition-all duration-200"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}

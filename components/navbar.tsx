@@ -23,15 +23,15 @@ export function useScroll(threshold: number) {
 export default function NavBar() {
   return (
     <>
-      <div className="bg-green-400">
-        <ProgressBar height="6" bgcolor="#1C1C1C" duration="0.2" />
+      <div className="bg-green-200">
+        <ProgressBar height="6" bgcolor="#FFF" duration="0.2" />
       </div>
       <div
-        className={`fixed top-0 flex w-full justify-center bg-white/40 backdrop-blur-xl z-30 transition-all`}>
+        className={`fixed top-0 flex w-full justify-center bg-white/10 backdrop-blur-xl z-30 transition-all`}>
         <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
           <Link
             href="/"
-            className="flex items-center font-display text-2xl font-extrabold text-gray-900 hover:text-gray-500">
+            className="flex items-center font-display text-2xl font-extrabold text-gray-100 hover:text-gray-500">
             Arun D.
           </Link>
         </div>
