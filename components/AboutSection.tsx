@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import { motion } from "framer-motion"
@@ -40,7 +41,7 @@ export default function AboutSection() {
                     const <span className="text-blue-400">aboutMe</span> = {"{"}
                   </div>
                   <div className="ml-4 text-emerald-400">
-                    name: <span className="text-yellow-300">"Arun Deegutla"</span>,
+                    name: <span className="text-yellow-300">&quot;Arun Deegutla&quot;</span>,
                   </div>
                   <div className="ml-4 text-emerald-400">
                     role: <span className="text-yellow-300">"Software Engineer"</span>,
@@ -52,10 +53,10 @@ export default function AboutSection() {
                     education: <span className="text-yellow-300">"UCF - CS & Math (minor)"</span>,
                   </div>
                   <div className="ml-4 text-emerald-400">interests: [</div>
-                  <div className="ml-8 text-yellow-300">"Full-Stack Development",</div>
-                  <div className="ml-8 text-yellow-300">"Competitive Programming",</div>
-                  <div className="ml-8 text-yellow-300">"AI & Machine Learning",</div>
-                  <div className="ml-8 text-yellow-300">"DevOps & Cloud"</div>
+                  <div className="ml-8 text-yellow-300">&quot;Full-Stack Development&quot;,</div>
+                  <div className="ml-8 text-yellow-300">&quot;Competitive Programming&quot;,</div>
+                  <div className="ml-8 text-yellow-300">&quot;AI & Machine Learning&quot;,</div>
+                  <div className="ml-8 text-yellow-300">&quot;DevOps & Cloud&quot;</div>
                   <div className="ml-4 text-emerald-400">],</div>
                   <div className="ml-4 text-emerald-400">
                     currentFocus: <span className="text-yellow-300">"Building the Future"</span>
