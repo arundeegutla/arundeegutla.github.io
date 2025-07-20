@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { Suspense } from 'react';
-import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 
 const poppins = Poppins({
@@ -43,10 +42,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className}`}>
         <Nav />
-        <main className="relative flex w-full flex-col items-center justify-center pt-32">
+        <main className="relative flex w-full flex-col items-center justify-center">
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   );

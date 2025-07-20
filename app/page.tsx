@@ -1,257 +1,210 @@
-'use client';
+"use client"
 
-import ExpCard from '@/components/ExpCard';
-import LinkCard from '@/components/LinkCard';
-import ProjectCard from '@/components/ProjectCard';
-import SkillsComp from '@/components/SkillsComp';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaMediumM } from 'react-icons/fa';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
-import { IoMdDocument } from 'react-icons/io';
-import { Typewriter } from 'react-simple-typewriter';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+import ExpCard from "@/components/ExpCard"
+import ProjectCard from "@/components/ProjectCard"
+import SkillsComp from "@/components/SkillsComp"
+import HeroSection from "@/components/HeroSection"
+import AboutSection from "@/components/AboutSection"
+import { VerticalTimeline } from "react-vertical-timeline-component"
+import "react-vertical-timeline-component/style.min.css"
+import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between w-screen">
-      <div className="relative flex flex-col w-full h-fit mb-9 pb-10">
-        <div className="flex flex-col text-center max-w-screen-lg justify-center m-auto text-4xl font-medium  p-6">
-          <h1>
-            <a className="waving-hand">👋</a>{' '}
-            <a className="font-thin">I&apos;m</a>{' '}
-            <a className="whitespace-nowrap">Arun Deegutla</a>
-          </h1>
-          <div className="flex text-2xl font-light mt-2 m-auto">
-            <Typewriter
-              words={[
-                'Software Engineer',
-                'Web Developer',
-                'Tech Enthusiast',
-                'Student',
-              ]}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={100}
-              deleteSpeed={50}
-              delaySpeed={2000}
-            />
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden w-full">
+      {/* Grain texture overlay */}
+      <div className="fixed inset-0 opacity-40 mix-blend-overlay pointer-events-none grain-texture" />
+
+      {/* Subtle background pattern */}
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] [background-size:20px_20px] pointer-events-none opacity-20" />
+
+      {/* Floating glass orbs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div
+          className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-pink-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "4s" }}
+        ></div>
+      </div>
+
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <HeroSection />
+
+        {/* About Section */}
+        <AboutSection />
+
+        {/* Skills Section */}
+        <section className="py-32 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-thin text-white mb-4">Skills</h2>
+              <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+                Technologies and tools I use to bring ideas to life
+              </p>
+            </div>
+            <SkillsComp />
           </div>
-          <div className="flex flex-row space-x-2 text-center min-h-[100px] p-2 w-fit m-auto">
-            <Link
-              href={'https://www.linkedin.com/in/arundeegutla/'}
-              target="_blank"
-              className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-              <FaLinkedinIn />
-            </Link>
-            <Link
-              href={'https://github.com/arundeegutla/'}
-              target="_blank"
-              className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-              <FaGithub />
-            </Link>
-            <Link
-              href={'https://medium.com/@arundeegutla'}
-              target="_blank"
-              className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-              <FaMediumM />
-            </Link>
-            {/* <Link
-            href={''}
-            target="_blank"
-            className="m-auto h-fit rounded-full bg-slate-200 border-2 hover:bg-gray-700 hover:text-white text-2xl p-2 hover:p-3 transition-all ease-in-out duration-300 hover:cursor-pointer">
-            <IoMdDocument />
-          </Link> */}
+        </section>
+
+        {/* Experience Section */}
+        <section className="py-32 px-6 bg-gradient-to-b from-slate-900/50 to-slate-800/50 backdrop-blur-sm">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-thin text-white mb-4">Experience</h2>
+              <p className="text-xl text-slate-400 max-w-2xl mx-auto">My journey through technology and innovation</p>
+            </div>
+
+            <VerticalTimeline animate={false} lineColor="rgba(148, 163, 184, 0.3)">
+              <ExpCard
+                title="Software Engineer Intern"
+                dates="May 2025 - Aug 2025"
+                location="Microsoft - Atlanta, GA"
+                desc="Built CI/CD dashboards and automated alerts for Azure, improving deployment reliability for 200M+ Intune clients."
+                image={
+                  <Image
+                    src={"/images/msft_logo.png"}
+                    alt="Microsoft logo"
+                    width={56}
+                    height={56}
+                    className="w-14 auto rounded-2xl overflow-visible"
+                  />
+                }
+              />
+              <ExpCard
+                title="ICPC Competitive Programmer"
+                dates="Sep 2022 - May 2025"
+                location="UCF Programming Team - Orlando, FL"
+                desc="Solved 1500+ coding problems and competed in regional contests."
+                image={
+                  <Image
+                    src={"/images/ucf_logo.png"}
+                    alt="ICPC logo"
+                    width={56}
+                    height={56}
+                    className="w-14 auto rounded-2xl overflow-visible"
+                  />
+                }
+              />
+              <ExpCard
+                title="Undergraduate Teaching Assistant"
+                dates="Sep 2024 - Dec 2024"
+                location="UCF - Orlando, FL"
+                desc="TA for Discrete Structures 2."
+                image={
+                  <Image
+                    src={"/images/ucf_logo.png"}
+                    alt="UCF logo"
+                    width={56}
+                    height={56}
+                    className="w-14 auto rounded-2xl overflow-visible"
+                  />
+                }
+              />
+              <ExpCard
+                title="Software Engineer Intern"
+                dates="May 2024 - Aug 2024"
+                location="AMD - San Jose, CA"
+                desc="Built CI/CD monitoring tool, reducing build failures by 60%. Automated deployments and visualized pipeline health in Grafana."
+                image={
+                  <Image
+                    src={"/images/amd_logo.png"}
+                    alt="AMD logo"
+                    width={56}
+                    height={56}
+                    className="w-14 auto rounded-2xl overflow-visible"
+                  />
+                }
+              />
+              <ExpCard
+                title="Undergraduate Teaching Assistant"
+                dates="Jan 2024 - May 2024"
+                location="UCF - Orlando, FL"
+                desc="TA for Problem Solving and Team Dynamics."
+                image={
+                  <Image
+                    src={"/images/ucf_logo.png"}
+                    alt="UCF logo"
+                    width={56}
+                    height={56}
+                    className="w-14 auto rounded-2xl overflow-visible"
+                  />
+                }
+              />
+              <ExpCard
+                title="Software Engineer Intern / Co-op"
+                dates="Jun 2023 - May 2024"
+                location="Kore AI - Orlando, FL"
+                desc="Enhanced chatbot performance and engagement with GPT-4."
+                image={
+                  <Image
+                    src={"/images/kore_logo.png"}
+                    alt="Kore AI logo"
+                    width={56}
+                    height={56}
+                    className="w-14 auto rounded-2xl overflow-visible"
+                  />
+                }
+              />
+            </VerticalTimeline>
+
           </div>
-        </div>
-        <SkillsComp />
-      </div>
+        </section>
 
-      <div className="flex flex-col w-full max-w-screen-lg h-fit my-10 p-6">
-        <div className="p-3 bg-gray-200 px-4 w-fit rounded-md text-xl">
-          About me
-        </div>
-        {/* <hr className="w-full  bg-gray-600"></hr> */}
-        <p className="p-5">
-          I&apos;m Arun, a software engineer pursuing a Bachelor’s in Computer
-          Science with a Minor in Mathematics at the{' '}
-          <strong>University of Central Florida</strong> graduating in 2025.
-          With a strong foundation in full-stack development, DevOps, and AI,
-          I&apos;ve interned at AMD and Kore AI, where I contributed to
-          impactful projects that enhanced system reliability and user
-          experience. I&apos;m driven by a love for problem-solving, my
-          commitment to innovation and collaboration. Let&apos;s build something
-          amazing together!
-        </p>
-      </div>
+        {/* Projects Section */}
+        <section className="py-32 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-thin text-white mb-4">Projects</h2>
+              <p className="text-xl text-slate-400 max-w-2xl mx-auto">Building solutions that make a difference</p>
+            </div>
 
-      <div className="flex flex-col w-full max-w-screen-lg h-fit my-10 p-6">
-        <div className="lg:m-auto p-3 bg-gray-200 px-4 w-fit rounded-md text-xl">
-          Experience
-        </div>
-        {/* <hr className="w-full bg-gray-600"></hr> */}
-        <VerticalTimeline animate={false} lineColor="rgba(75, 85, 99, 0.5)">
-          <ExpCard
-            title="Undergraduate Teaching Assistant"
-            dates="Sep 2024 - Dec 2024"
-            location="UCF - Orlando, FL"
-            desc="Teaching Assistant for Discrete Structures 2"
-            image={
-              <Image
-                src={'/images/ucf_logo.png'}
-                alt="amd logo"
-                width={0}
-                height={0}
-                className="w-14 h-auto"
-                unoptimized
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <ProjectCard
+                title="DevLink"
+                desc="Led frontend development in a 7-person team, creating a skill-matching platform that connected 50+ developers with software projects, enhancing collaboration and project alignment through intelligent matching algorithms."
+                image=""
+                github="https://github.com/arundeegutla/DevLink.git"
+                tech={["Next.js", "Expo", "Tailwind UI", "Firebase", "Express", "TypeScript"]}
               />
-            }
-          />
-
-          <ExpCard
-            title="ICPC Competitive Programmer"
-            dates="Sep 2022 - Present"
-            location="UCF Programming Team - Orlando, FL"
-            desc="Solved 1500+ coding problems, focusing on C++ and Java implementations of advanced data structures and algorithms"
-            image={
-              <Image
-                src={'/images/ucf_logo.png'}
-                alt="amd logo"
-                width={0}
-                height={0}
-                className="w-14 h-auto"
-                unoptimized
+              <ProjectCard
+                title="Alg0Run"
+                desc="🏆 Won Best First-Time Hacker award among 700+ projects at KnightHacks by developing AlgoRun, a platform combining algorithmic challenges with typing speed tests in Python, C++, and Java."
+                image=""
+                github="https://github.com/arundeegutla/Alg0Run.git"
+                link="https://alg0run.netlify.app/"
+                tech={["React", "Tailwind UI", "Firebase", "TypeScript"]}
               />
-            }
-          />
-
-          <ExpCard
-            title="Software Engineer Intern"
-            dates="May 2024 - Aug 2024"
-            location="AMD - San Jose, CA"
-            desc="DevOps for Ryzen AI software development"
-            image={
-              <Image
-                src={'/images/amd_logo.png'}
-                alt="amd logo"
-                width={0}
-                height={0}
-                className="w-14 h-auto"
-                unoptimized
+              <ProjectCard
+                title="RubiXolver"
+                desc="Developed an intelligent application that detects and solves a Rubik's cube using computer vision with OpenCV, NumPy, and Kociemba's two-phase algorithm for optimal solving."
+                image=""
+                github="https://github.com/arundeegutla/Rubixolver.git"
+                tech={["Python", "OpenCV", "NumPy", "Computer Vision"]}
               />
-            }
-          />
-          <ExpCard
-            title="Undergraduate Teaching Assistant"
-            dates="Jan 2024 - May 2024"
-            location="UCF - Orlando, FL"
-            desc="Teaching Assistant for Problem Solving and Team Dynamics course"
-            image={
-              <Image
-                src={'/images/ucf_logo.png'}
-                alt="amd logo"
-                width={0}
-                height={0}
-                className="w-14 h-auto"
-                unoptimized
+              <ProjectCard
+                title="RateMyUCFProfessor"
+                desc="Chrome extension that seamlessly displays ratings of UCF professors from RateMyProfessor.com, helping thousands of students make informed course decisions."
+                image=""
+                github="https://github.com/arundeegutla/RateMyUCFProfessor.git"
+                link="https://chromewebstore.google.com/detail/imlmfakdnakcelcmhkdmehdeljilhnok?utm_source=chrome-ntp-icon"
+                tech={["HTML", "CSS", "JavaScript", "Chrome API"]}
               />
-            }
-          />
-          <ExpCard
-            title="Software Engineer Intern / Co-op"
-            dates="Jun 2023 - May 2024"
-            location="Kore AI - Orlando, FL"
-            desc="Engineered personalized chatbot solutions, enhancing performance with GPT-4"
-            image={
-              <Image
-                src={'/images/kore_logo.png'}
-                alt="amd logo"
-                width={0}
-                height={0}
-                className="w-14 h-auto"
-                unoptimized
-              />
-            }
-          />
-        </VerticalTimeline>
-      </div>
+            </div>
+          </div>
+        </section>
 
-      {/* <div className="flex flex-col w-full h-fit my-10">
-        <div className="lg:m-auto p-3 bg-gray-200 px-4 w-fit rounded-md text-xl">
-          Eduation
-        </div>
-        <VerticalTimeline animate={false} lineColor="rgba(75, 85, 99, 0.5)">
-          <ExpCard
-            title="University of Central Florida"
-            dates="2021 - 2025"
-            location="Orlando, FL"
-            desc="Bachelor's in Computer Science"
-            image={
-              <Image
-                src={'/images/ucf_logo.png'}
-                alt="amd logo"
-                width={0}
-                height={0}
-                className="w-14 h-auto"
-                unoptimized
-              />
-            }
-          />
-        </VerticalTimeline>
-      </div> */}
-
-      <div className="flex flex-col w-full max-w-screen-lg h-fit my-10 p-6">
-        <div className="p-3 bg-gray-200 px-4 w-fit rounded-md text-xl">
-          Projects
-        </div>
-        <div className="flex flex-row flex-wrap lg:justify-center">
-          <ProjectCard
-            title="DevLink"
-            desc="Led frontend development in a 7-person team, creating a skill-matching platform that connected 50+ developers with software projects, enhancing collaboration and project alignment"
-            image=""
-            github="https://github.com/arundeegutla/DevLink.git"
-            // link="https://www.linkedin.com/in/arundeegutla/"
-            tech={[
-              'Next',
-              'Expo',
-              'Tailwind UI',
-              'Firebase',
-              'Express',
-              'TypeScript',
-            ]}
-          />
-          <ProjectCard
-            title="Alg0Run"
-            desc="Won Best First-Time Hacker award among 700+ projects at KnightHacks by developing AlgoRun, a platform combining algorithmic challenges with typing speed tests in Python, C++, and Java"
-            image=""
-            github="https://github.com/arundeegutla/Alg0Run.git"
-            link="https://alg0run.netlify.app/"
-            tech={['React', 'Tailwind UI', 'Firebase', 'TypeScript']}
-          />
-          <ProjectCard
-            title="RubiXolver"
-            desc="Developed an application that detects and solves a Rubik's cube using OpenCV, NumPy, and Kociemba's two-phase algorithm."
-            image=""
-            github="https://github.com/arundeegutla/Rubixolver.git"
-            tech={['Python', 'OpenCV', 'NumPy']}
-          />
-          <ProjectCard
-            title="RateMyUCFProfessor"
-            desc="Chrome extension that displays ratings of UCF professors from RateMyProfessor.com. Utilized JavaScript, HTML, and CSS to create user-friendly interface."
-            image=""
-            github="https://github.com/arundeegutla/RateMyUCFProfessor.git"
-            link="https://chromewebstore.google.com/detail/imlmfakdnakcelcmhkdmehdeljilhnok?utm_source=chrome-ntp-icon"
-            tech={['HTML', 'CSS', 'JavaScript']}
-          />
-        </div>
-      </div>
-
-      {/* <button>Click me!</button> */}
-    </main>
-  );
+        {/* Footer */}
+        <footer className="py-5 px-6 bg-slate-900/80 backdrop-blur-xl border-t border-slate-700/30">
+          <div className="max-w-7xl mx-auto text-center">
+            <p className="text-slate-500 text-sm">&copy; {new Date().getFullYear()} Arun Deegutla. All rights reserved.</p>
+          </div>
+        </footer>
+      </main>
+    </div >
+  )
 }
