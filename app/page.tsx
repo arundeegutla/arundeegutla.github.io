@@ -64,7 +64,7 @@ export default function Home() {
                 title="Software Engineer Intern"
                 dates="May 2025 - Aug 2025"
                 location="Microsoft - Atlanta, GA"
-                desc="Built CI/CD dashboards and automated alerts for Azure, improving deployment reliability for 200M+ Intune clients."
+                desc="Improving OAuth connector reliability for 200M+ Intune clients."
                 image={
                   <Image
                     src={"/images/msft_logo.png"}
